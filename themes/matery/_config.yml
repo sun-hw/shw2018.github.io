@@ -46,8 +46,7 @@ menu:
     icon: fa-address-book
   Contact:
     url: /contact
-    icon:
-
+    icon: fa-envelope-o
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -122,10 +121,10 @@ indexbtn:
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
   qq: 948840751
-  github: https://github.com/shw2018/
-  weibo: 微风穿云隙
+  github: shw2018
+  weibo: 3010027571  # 微风穿云隙
   email: 948840751@qq.com
-  zhihu: Hongwei
+  zhihu: hongwei-60-34 # Hongwei
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -144,7 +143,7 @@ code:
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
   enable: true
-  title: 能否打赏一杯咖啡，让我有继续写作的动力？
+  title: 你的赏识是我前进的动力!
   wechat: /medias/reward/wechat.bmp
   alipay: /medias/reward/alipay.bmp
 
@@ -250,9 +249,9 @@ myGallery:
     - /medias/featureimages/7.jpg
     - /medias/featureimages/8.jpg
     - /medias/featureimages/9.jpg
-    - /medias/featureimages/10.jpg
-    - /medias/featureimages/11.jpg
-    - /medias/featureimages/12.jpg
+#    - /medias/featureimages/10.jpg
+#    - /medias/featureimages/11.jpg
+#    - /medias/featureimages/12.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -310,7 +309,7 @@ valine:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/shw2018
+  url: https://github.com/shw2018/shw2018.github.io
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
