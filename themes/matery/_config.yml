@@ -1,27 +1,53 @@
 # main menu navigation url and icon
 # 配置菜单导航的名称、路径和图标icon.
+#menu:
+#  Index:
+#    url: /
+#    icon: fa-home
+#  Tags:
+#    url: /tags
+#    icon: fa-tags
+#  Categories:
+#    url: /categories
+#    icon: fa-bookmark
+#  Archives:
+#    url: /archives
+#    icon: fa-archive
+#  About:
+#    url: /about
+#    icon: fa-user-circle-o
+#  Friends:
+#    url: /friends
+#    icon: fa-address-book
+#  Contact:
+#    url: /contact
+#    icon:
 menu:
-  Index:
+  首页:
     url: /
-    icon:
-  Tags:
+    icon: fa-home
+  标签:
     url: /tags
-    icon:
-  Categories:
+    icon: fa-tags
+  分类:
     url: /categories
-    icon:
-  Archives:
+    icon: fa-bookmark
+  归档:
     url: /archives
-    icon:
-  About:
+    icon: fa-archive
+#  视听:
+#    url: /music
+#    icon: fa-music
+  关于:
     url: /about
-    icon:
-  Friends:
+    icon: fa-user-circle-o
+  友情链接:
     url: /friends
-    icon:
+    icon: fa-address-book
   Contact:
     url: /contact
     icon:
+
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -47,7 +73,7 @@ music:
   showTitle: false
   title: 听听音乐
   fixed: false # 开启吸底模式
-  autoplay: true # 是否自动播放
+  autoplay: false # 是否自动播放
   theme: '#542674'
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
@@ -89,17 +115,17 @@ indexbtn:
   enable: true
   name: Github
   icon: fa-github-alt
-  url: https://github.com/godweiyang
+  url: https://github.com/shw2018/
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  qq: 792321264
-  github: godweiyang
-  weibo: godweiyang
-  email: weiyang@godweiyang.com
-  zhihu: godweiyang
+  qq: 948840751
+  github: https://github.com/shw2018/
+  weibo: 微风穿云隙
+  email: 948840751@qq.com
+  zhihu: Hongwei
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -119,8 +145,8 @@ code:
 reward:
   enable: true
   title: 能否打赏一杯咖啡，让我有继续写作的动力？
-  wechat: /medias/reward/wechat.png
-  alipay: /medias/reward/alipay.jpg
+  wechat: /medias/reward/wechat.bmp
+  alipay: /medias/reward/alipay.bmp
 
 # Whether to activate the copyright information of the blog and author when copying the post content.
 # minCharNumber: Approve copyright information by copying at least how many characters.
@@ -136,7 +162,7 @@ copyright:
 # 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
 # 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行.
 mathjax:
-  enable: true
+  enable: false
   cdn: https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Post word count, reading duration, site total word count.
@@ -158,9 +184,9 @@ clicklove:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatars/avatar.jpg
-  career: 华东师范大学 | 计算机科学与技术 | AntNLP
-  introduction: 我是华东师范大学计算机科学与技术专业2018级硕士研究生。直研进入本校计算机系攻读硕士，研究方向是深度学习与自然语言处理。我们实验室是AntNLP，欢迎大家报考！
+  avatar: /medias/avatars/hwsun.jpg
+  career: 电子科技大学 | 电子与通信工程 | 计算机视觉
+  introduction: 我是电子科技大学信息与通信工程学院2018级硕士研究生。研究方向是计算机视觉，深度学习。我们实验室是智能视觉信息处理与通信实验室(IVIPC)，欢迎大家报考！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -192,16 +218,16 @@ mySkills:
   data:
     算法:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 90%
+      percent: 70%
     C++:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
+      percent: 50%
     Python:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
+      percent: 90%
     Java:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 50%
+      percent: 40%
     SQL:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 50%
@@ -213,11 +239,20 @@ mySkills:
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: false
+  enable: true
   data:
+    - /medias/featureimages/0.jpg
+    - /medias/featureimages/1.jpg
     - /medias/featureimages/2.jpg
+    - /medias/featureimages/4.jpg
     - /medias/featureimages/5.jpg
     - /medias/featureimages/6.jpg
+    - /medias/featureimages/7.jpg
+    - /medias/featureimages/8.jpg
+    - /medias/featureimages/9.jpg
+    - /medias/featureimages/10.jpg
+    - /medias/featureimages/11.jpg
+    - /medias/featureimages/12.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -227,12 +262,13 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: godweiyang
-  repo: godweiyang.github.io
+  owner: shw2018
+  repo: shw2018.github.io
   oauth:
-    clientId: c3ac6e20697ee5422b43
-    clientSecret: 3ccf19d2ec7e33b55f71aaeec74542a3938772f6
-  admin: godweiyang
+    clientId: ffe0ea359d9892dfbadb
+    clientSecret: d6994d2b05f6e0b64819475986bb400bbd3a0051
+  admin:
+    - shw2018
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
@@ -274,7 +310,7 @@ valine:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/godweiyang
+  url: https://github.com/shw2018
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
@@ -284,7 +320,7 @@ githubLink:
 # 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和加密后的密文即可.
 # 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
 verifyPassword:
-  enable: true
+  enable: false
   promptMessage: 请输入访问本文章的密码
   errorMessage: 密码错误，将返回主页！
 
@@ -298,7 +334,7 @@ busuanziStatistics:
 # Add google analytics configuration
 # 添加 Google Analytics 配置
 googleAnalytics:
-  enable: true
+  enable: false
   id: UA-144253917-1
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
