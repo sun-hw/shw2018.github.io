@@ -14,16 +14,13 @@
                     <% if (theme.dream.enable) { %>
                     <%- partial('_widget/dream') %>
                     <% } %>
-
                     <% if (theme.music.enable && site.data && site.data.musics) { %>
                     <%- partial('_widget/music') %>
                     <% } %>
-
                     <%# 注释语法 %>
                     <%# if (theme.video.enable) { %>
                     <%# - partial('_widget/video') %>
                     <%# } %>
-
                     <div id="recommend-sections" class="recommend">
                         <%- partial('_widget/recommend') %>
                     </div>

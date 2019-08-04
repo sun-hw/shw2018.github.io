@@ -88,9 +88,11 @@ music:
 # 是否在首页显示视频.
 video:
   enable: true
-  showTitle: true
-  title: 邓紫棋 - 差不多姑娘
-  url: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 必填
+  showTitle: false
+  title1: 邓紫棋 - 差不多姑娘
+  url1: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 必填
+  title2: 邓紫棋 - 差不多姑娘
+  url2: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 必填
   pic:
   thumbnails:
   height: # 如：400
