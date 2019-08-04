@@ -90,7 +90,7 @@ video:
   enable: true
   showTitle: true
   title: 邓紫棋 - 差不多姑娘
-  url: /medias/video/chabuduoguniang.mp4 # 必填
+  url: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 必填
   pic:
   thumbnails:
   height: # 如：400

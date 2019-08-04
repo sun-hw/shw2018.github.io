@@ -176,7 +176,7 @@ mark {
 }
 
 .progress-bar {
-    height: 4px;
+    height: 6px;
     position: fixed;
     bottom: 0;
     z-index: 300;
