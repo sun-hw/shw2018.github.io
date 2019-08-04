@@ -1,52 +1,55 @@
 # main menu navigation url and icon
 # 配置菜单导航的名称、路径和图标icon.
-#menu:
-#  Index:
-#    url: /
-#    icon: fa-home
-#  Tags:
-#    url: /tags
-#    icon: fa-tags
-#  Categories:
-#    url: /categories
-#    icon: fa-bookmark
-#  Archives:
-#    url: /archives
-#    icon: fa-archive
-#  About:
-#    url: /about
-#    icon: fa-user-circle-o
-#  Friends:
-#    url: /friends
-#    icon: fa-address-book
-#  Contact:
-#    url: /contact
-#    icon:
 menu:
-  首页:
+  Index:
     url: /
     icon: fa-home
-  标签:
+  Tags:
     url: /tags
     icon: fa-tags
-  分类:
+  Categories:
     url: /categories
     icon: fa-bookmark
-  归档:
+  Archives:
     url: /archives
     icon: fa-archive
-  视听:
-    url: /AV
+  AV:
+    url: /av
     icon: fa-music
-  关于:
+  About:
     url: /about
     icon: fa-user-circle-o
-  友情链接:
+  Friends:
     url: /friends
     icon: fa-address-book
   Contact:
     url: /contact
     icon: fa-envelope
+#menu:
+#  首页:
+#    url: /
+#    icon: fa-home
+#  标签:
+#    url: /tags
+#    icon: fa-tags
+#  分类:
+#    url: /categories
+#    icon: fa-bookmark
+#  归档:
+#    url: /archives
+#    icon: fa-archive
+#  视听:
+#    url: /av
+#    icon: fa-music
+#  关于:
+#    url: /about
+#    icon: fa-user-circle-o
+#  友情链接:
+#    url: /friends
+#    icon: fa-address-book
+#  Contact:
+#    url: /contact
+#    icon: fa-envelope
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
