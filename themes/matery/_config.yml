@@ -14,7 +14,7 @@ menu:
     url: /archives
     icon: fa-archive
   AV:
-    url: /av
+    url: /AV
     icon: fa-music
   About:
     url: /about
