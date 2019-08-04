@@ -2,7 +2,7 @@
 title: 超详细Hexo+Github博客搭建小白教程
 date: 2018-04-13 00:20:08
 top: true
-cover: false
+cover: true
 password:
 toc: true
 mathjax: true

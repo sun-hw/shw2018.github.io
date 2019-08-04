@@ -2,7 +2,7 @@
 title: Latex撰写论文常用技巧总结
 date: 2019-01-13 17:34:07
 top: true
-cover: false
+cover: true
 password:
 toc: true
 mathjax: true
