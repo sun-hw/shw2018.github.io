@@ -87,7 +87,7 @@ music:
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: false
+  enable: true
   showTitle: true
   title: 邓紫棋 - 差不多姑娘
   url: /medias/video/chabuduoguniang.mp4 # 必填

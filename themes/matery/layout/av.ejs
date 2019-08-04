@@ -47,6 +47,14 @@
 
                 <%- partial('_widget/post-charts') %>
 
+                <% if (theme.music && theme.music.enable) { %>
+                <%- partial('_widget/music') %>
+                <% } %>
+
+                <% if (theme.video && theme.video.enable) { %>
+                <%- partial('_widget/video') %>
+                <% } %>
+
                 <% if (theme.myProjects && theme.myProjects.enable) { %>
                 <%- partial('_widget/my-projects') %>
                 <% } %>
