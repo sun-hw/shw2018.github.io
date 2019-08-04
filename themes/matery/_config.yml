@@ -35,9 +35,9 @@ menu:
   归档:
     url: /archives
     icon: fa-archive
-#  视听:
-#    url: /music
-#    icon: fa-music
+  视听:
+    url: /AV
+    icon: fa-music
   关于:
     url: /about
     icon: fa-user-circle-o
@@ -46,7 +46,7 @@ menu:
     icon: fa-address-book
   Contact:
     url: /contact
-    icon: fa-envelope-o
+    icon: fa-envelope
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
