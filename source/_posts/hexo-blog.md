@@ -23,9 +23,9 @@ categories:
 
 然后`git branch -b hexo`切换到`hexo`分支，然后`git add .`，然后`git commit -m "xxx"`，最后`git push origin hexo`提交就行了。
 
-具体效果可以看我的博客源文件仓库：[传送门](https://github.com/godweiyang/godweiyang.github.io/tree/hexo)。
+具体效果可以看我的博客源文件仓库：[传送门](https://github.com/shw2018/shw2018.github.io)。
 
-大家也可以先用下文hexo安装方法安装完hexo，然后直接`git clone -b hexo git@github.com:godweiyang/godweiyang.github.io.git`克隆我的所有源文件，然后这是我修改完的基本没bug的定制化的博客，就可以直接拿来用啦。
+大家也可以先用下文hexo安装方法安装完hexo，然后直接`git clone -b hexo https://github.com/shw2018/shw2018.github.io.git`克隆我的所有源文件，然后这是我修改完的基本没bug的定制化的博客，就可以直接拿来用啦。
 
 
 # 更新：更换新主题（2019.07.20）
@@ -260,7 +260,7 @@ live2d:
 ---
 去年9月的时候开始搭建了第一个自己的独立博客，到现在也稍微像模像样了。很多小伙伴应该也想过搭建一个自己的博客，网上也有一堆详细教程。我在此稍稍总结一下具体的搭建步骤，另外网上很少有修改博客源码的个性化教程，我就稍稍分享一下我的一些修改经验，更多的个性化操作需要你自己以后去摸索。
 
-具体效果可以参观我的博客：[godweiyang.com](http://godweiyang.com)，欢迎大家支持。
+具体效果可以参观我的博客：[http://shw2018.github.io](http://shw2018.github.io)，欢迎大家支持。
 
 我不是一个前端程序员，有些东西不是很了解，说的不好大家见谅。
 
@@ -572,7 +572,7 @@ tags: 标签
 categories: 分类
 ```
 
-网站图片都保存在`D:\study\program\blog\source\img`目录下，可以修改成自己的图片。
+网站图片都保存在`D:\Study\MyBlog\source\img`目录下，可以修改成自己的图片。
 
 如果换一台电脑想迁移博客的话，最简单的方法就是把博客整个目录拷贝过去，就是这么暴力。
 
