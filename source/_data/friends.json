@@ -3,7 +3,7 @@
         "name": "IVIPC",
         "url": "http://ivipc.uestc.edu.cn/",
         "title": "访问主页",
-        "introduction": "UESTC智能视觉信息处理与通信实验室(IVIPC)欢迎您的加入！",
+        "introduction": "UESTC智能视觉信息处理与通信实验室欢迎您的加入！",
         "avatar": "/medias/avatars/ivipc.png"
     },{
 	    "avatar": "http://image.luokangyuan.com/1_qq_27922023.jpg",
@@ -18,18 +18,6 @@
 	    "url": "https://www.90c.vip/",
 	    "title": "前去学习"
     },{
-	    "avatar": "https://jiangliuhong.gitee.io/images/avatar.jpg",
-	    "name": "编程常青树",
-	    "introduction": "平凡的脚步也可以走出伟大的行程",
-	    "url": "https://jiangliuhong.gitee.io/",
-	    "title": "前去学习"
-    },{
-        "name": "IDS²",
-        "url": "https://www.smart-dependable-sino-europe.institute",
-        "title": "访问主页",
-        "introduction": "中欧可靠智能软件联合实验室欢迎您的加入！",
-        "avatar": "/medias/avatars/ids2.jpg"
-    },{
         "name": "隐函数_北极鹅",
         "url": "https://www.zhihu.com/people/bei-ji-e-13",
         "title": "访问主页",
@@ -42,23 +30,11 @@
         "introduction": "浙江大学 & NLP & ML",
         "avatar": "/medias/avatars/hael.jpg"
     },{
-        "name": "happygirlzt",
-        "url": "https://www.happygirlzt.com",
-        "title": "访问主页",
-        "introduction": "A Backend Engineer",
-        "avatar": "/medias/avatars/zhangting.jpg"
-    },{
         "name": "hzwer",
         "url": "http://hzwer.com/",
         "title": "访问主页",
         "introduction": "北京大学计算机系",
         "avatar": "/medias/avatars/hzwer.jpg"
-    },{
-        "name": "Yucheng Li",
-        "url": "https://liyucheng.info/",
-        "title": "访问主页",
-        "introduction": "目前关注知识图谱与关系抽取领域",
-        "avatar": "/medias/avatars/liyucheng.jpg"
     },{
         "name": "Zhang Yi",
         "url": "http://codewithzhangyi.com/",

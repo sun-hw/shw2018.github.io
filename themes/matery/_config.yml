@@ -19,12 +19,13 @@ menu:
   About:
     url: /about
     icon: fa-user-circle-o
-  Friends:
-    url: /friends
-    icon: fa-address-book
   Contact:
     url: /contact
     icon: fa-envelope
+  Friends:
+    url: /friends
+    icon: fa-address-book
+
 #menu:
 #  首页:
 #    url: /
