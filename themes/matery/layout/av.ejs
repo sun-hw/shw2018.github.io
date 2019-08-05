@@ -8,7 +8,6 @@
 <%- partial('_partial/bg-cover') %>
 
 <main class="content">
-
     <div id="aboutme" class="container about-container">
         <div class="card">
             <div class="card-content">
@@ -23,22 +22,14 @@
                                     class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
-                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
-                                    <%- partial('_partial/post-statis') %>
-                                </div>
+
                                 <div class="title"><%- config.author %></div>
                                 <div class="career"><%- theme.profile.career %></div>
-                                <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
-                                    <%- partial('_partial/social-link') %>
-                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
-                        <div class="social-link">
-                            <%- partial('_partial/social-link') %>
-                        </div>
-                    </div>
+
                 </div>
 
                 <% if (theme.music && theme.music.enable) { %>
@@ -49,6 +40,10 @@
                 <%- partial('_widget/video') %>
                 <% } %>
 
+                <% if (theme.video && theme.video.enable) { %>
+                <%- partial('_widget/video') %>
+                <% } %>
+                
                 <% if (theme.myGallery && theme.myGallery.enable) { %>
                 <%- partial('_widget/my-gallery') %>
                 <% } %>
