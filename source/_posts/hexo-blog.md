@@ -260,7 +260,7 @@ live2d:
 ---
 去年9月的时候开始搭建了第一个自己的独立博客，到现在也稍微像模像样了。很多小伙伴应该也想过搭建一个自己的博客，网上也有一堆详细教程。我在此稍稍总结一下具体的搭建步骤，另外网上很少有修改博客源码的个性化教程，我就稍稍分享一下我的一些修改经验，更多的个性化操作需要你自己以后去摸索。
 
-具体效果可以参观我的博客：[http://shw2018.github.io](http://shw2018.github.io)，欢迎大家支持。
+具体效果可以参观我的博客：[sunhwee.com](http://shw2018.github.io)，欢迎大家支持。
 
 我不是一个前端程序员，有些东西不是很了解，说的不好大家见谅。
 
@@ -325,14 +325,14 @@ npm config set registry https://registry.npm.taobao.org
 ---
 首先右键打开git bash，然后输入下面命令：
 ```
-git config --global user.name "godweiyang"
-git config --global user.email "792321264@qq.com"
+git config --global user.name "shw2018"
+git config --global user.email "hwsun@std.uestc.edu.cn"
 ```
 用户名和邮箱根据你注册github的信息自行修改。
 
 然后生成密钥SSH key：
 ```
-ssh-keygen -t rsa -C "792321264@qq.com"
+ssh-keygen -t rsa -C "hwsun@std.uestc.edu.cn"
 ```
 
 打开[github](http://github.com)，在头像下面点击`settings`，再点击`SSH and GPG keys`，新建一个SSH，名字随便。
@@ -352,7 +352,7 @@ cat ~/.ssh/id_rsa.pub
 ```
 deploy:
   type: git
-  repository: https://github.com/godweiyang/godweiyang.github.io
+  repository: https://github.com/shw2018/shw2018.github.io
   branch: master
 ```
 repository修改为你自己的github项目地址。**不过你这里看到的可能与我有点不一样，因为我已经修改过主题了，所以这一步先不用管，换完主题之后记得回来修改！**
