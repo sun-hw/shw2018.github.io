@@ -1,13 +1,15 @@
 ---
 title: Hexo+Github博客搭建记录
 date: 2019-08-10 21:44:44
+author: 洪卫
+img: /medias/banner/7.jpg
+coverImg: /medias/banner/4.jpg
 top: true
 cover: true
-img: /medias/banner/7.jpg
-password:
 toc: true
+password: 
 mathjax: true
-summary:
+summary: 阅读须知:注意，这篇文章篇幅较长，主要针对新手，每一步很详细，所以可能会显得比较啰嗦，所以建议基础比较好小伙伴根据目录选择自己感兴趣的部分跳着看，不要文章没看，上来先喷一下！谢谢( ⊙ o ⊙ )
 tags:
 - Hexo
 - Github
@@ -24,7 +26,7 @@ categories:
 ---
 去年在博客园注册了自己的第一个博客，当时初衷就是想拿来作为自己的在线笔记本，做做学习记录，分享一些学到的东西，使用第三方提供的博客服务其实也挺方便，现在市面上提供类似服务的博客网站也很多，如CSDN，博客园，简书等平台，可以直接在上面发表，用户交互做的好，写的文章百度也能搜索的到。但是缺点是比较不自由，会受到平台的各种限制和恶心的广告，个性化不足。而自己购买域名和服务器，搭建博客的成本实在是太高了，不光是说这些购买成本，单单是花力气去自己搭这么一个网站，还要定期的维护它，对于我们大多数人来说，也是没有这样的精力和时间。那么，我们能不能自己定制一个自己喜欢的个性化博客，同时也不用付出太高的成本啦？
 
-这就引出了第三种选择，基于开源框架搭建博客，然后直接在github page平台上托管我们的博客。这样就可以安心的来写作，又不需要定期维护，基于这个想法，今年8月初的时候开始搭建第一个属于自己的独立博客，前后断续弄了近一周，到现在稍微有点模样了。我想可能有很多小伙伴应该也想过搭建一个自己的博客，当然，网上也有一堆详细教程。写这篇博客的目的大概有两个，第一个是当做自己的搭建记录，方便以后自己随时查看提示修改，第二个是稍稍总结一下具体的搭建步骤以及一些支持个性化定制的博客源码修改的教程，稍稍分享一下这些修改经验，当然，更多的一些个性化操作需要你自己以后在这个基础上慢慢去摸索，有些写的不太好的地方还希望看到的小伙伴多多包涵。
+这就引出了第三种选择，基于开源框架搭建博客，然后直接在`github page`平台上托管我们的博客。这样就可以安心的来写作，又不需要定期维护，基于这个想法，今年8月初的时候开始搭建第一个属于自己的独立博客，前后断续弄了近一周，到现在稍微有点模样了。我想可能有很多小伙伴应该也想过搭建一个自己的博客，当然，网上也有一堆详细教程。写这篇博客的目的大概有两个，第一个是当做自己的搭建记录，方便以后自己随时查看提示修改，第二个是稍稍总结一下具体的搭建步骤以及一些支持个性化定制的博客源码修改的教程，稍稍分享一下这些修改经验，当然，更多的一些个性化操作需要你自己以后在这个基础上慢慢去摸索，有些写的不太好的地方还希望看到的小伙伴多多包涵。
 
 博客初步的页面效果可以参观一下我的博客：[sunhwee.com](http://shw2018.github.io)，欢迎大家支持。
 
@@ -32,32 +34,32 @@ categories:
 > 简单总结：`Hexo`, 产品成熟，使用简单，功能强大，有丰富的各种插件资源；但，像发布后台、站内搜索，评论系统类似诉求，虽然有对应的工具，但也需要自己折腾下，后续我们一步一步介绍。
 
 教程大致分三个部分，
-* 第一部分：hexo的初级搭建还有部署到github page上，以及个人域名的绑定。
-* 第二部分：hexo的基本配置，更换主题，实现多终端工作，以及在coding page部署实现国内外分流
-* 第三部分：hexo添加各种功能，包括搜索的SEO，阅读量统计，访问量统计和评论系统等。
+* 第一部分：`hexo`的初级搭建还有部署到`github page`上，以及个人域名的绑定。
+* 第二部分：`hexo`的基本配置，更换主题，实现多终端工作，以及在`coding page`部署实现国内外分流
+* 第三部分：`hexo`添加各种功能，包括搜索的`SEO`，阅读量统计，访问量统计和评论系统等。
 
 # 第一部分  搭建
 ---
-hexo的初级搭建还有部署到github page上，以及个人域名的绑定。
+`hexo`的初级搭建还有部署到`github page`上，以及个人域名的绑定。
 ## Hexo搭建步骤
 
-- 1.安装Git
-- 2.安装Node.js
-- 3.安装Hexo
-- 4.GitHub创建个人仓库
-- 5.生成SSH添加到GitHub
-- 6.将hexo部署到GitHub
+- 1.安装`Git`
+- 2.安装`Node.js`
+- 3.安装`Hexo`
+- 4.`GitHub`创建个人仓库
+- 5.生成`SSH`添加到`GitHub`
+- 6.将`hexo`部署到`GitHub`
 - 7.设置个人域名
 - 8.发布文章
 
 ## 1. 安装Git
 ---
-为了把本地的网页文件上传到github上面去，需要用到工具———Git[[下载地址]](https://git-scm.com/download)。Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git非常强大，建议每个人都去了解一下。廖雪峰老师的Git教程写的非常好，大家可以看一下。[Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+为了把本地的网页文件上传到`github`上面去，需要用到工具———Git[[下载地址]](https://git-scm.com/download)。`Git`是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。`Git`非常强大，建议每个人都去了解一下。廖雪峰老师的`Git`教程写的非常好，大家可以看一下。[Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
 
-**windows：**到git官网上下载exe文件,[Download git](https://git-scm.com/download/win),安装选项还是全部默认，只不过最后一步添加路径时选择`Use Git from the Windows Command Prompt`，这样我们就可以直接在命令提示符里打开git了。
-> 顺便说一下，windows在git安装完后，就可以直接使用git bash来敲命令行了，不用自带的cmd，cmd有点难用。
+**windows：**到`git`官网上下载`.exe`文件,[Download git](https://git-scm.com/download/win),安装选项还是全部默认，只不过最后一步添加路径时选择`Use Git from the Windows Command Prompt`，这样我们就可以直接在命令提示符里打开`git`了。
+> 顺便说一下，`windows`在`git`安装完后，就可以直接使用`git bash`来敲命令行了，不用自带的`cmd`，`cmd`有点难用。
 
-**linux：**对linux来说实在是太简单了，因为最早的`git`就是在`linux`上编写的，只需要一行代码
+**linux：**对`linux`来说实在是太简单了，因为最早的`git`就是在`linux`上编写的，只需要一行代码
 ```bash
 sudo apt-get install git
 ```
@@ -66,7 +68,7 @@ sudo apt-get install git
 
 ## 2. 安装nodejs
 ---
-Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm工具。
+`Hexo`是基于`node.js`编写的，所以需要安装一下`node.js`和里面的`npm`工具。
 
 **windows：**下载稳定版或者最新版都可以[Node.js](http://nodejs.cn/download/)，安装选项全部默认，一路点击`Next`。
 最后安装好之后，按`Win+R`打开命令提示符，输入`node -v`和`npm -v`，如果出现版本号，那么就安装成功了。
@@ -76,14 +78,14 @@ Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm�
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
-不过不推荐命令行安装，有时候有问题，建议直接到官网去下载编译好的压缩文件，如下所示:![](1.png)，然后解压到你指定的文件夹即可，比如我解压到我系统的/home/shw/MySoftwares目录下了，如图:![](2.png)
-> 注意本压缩包是.tar.xz格式的，需要两次解压
+不过不推荐命令行安装，有时候有问题，建议直接到官网去下载编译好的压缩文件，如下所示:![](1.png)，然后解压到你指定的文件夹即可，比如我解压到我系统的`/home/shw/MySoftwares`目录下了，如图:![](2.png)
+> 注意本压缩包是`.tar.xz`格式的，需要两次解压
 
 配置一下环境变量
 ```bash
 sudo vim /etc/profile
 ```
-复制下面两行到刚打开的profile文件最底部(注意node的安装地址/home/shw/MySoftwares/node-v12.8.0-linux-x64换成自己的)：
+复制下面两行到刚打开的`profile`文件最底部(注意`node`的安装地址`/home/shw/MySoftwares/node-v12.8.0-linux-x64`换成自己的)：
 ```bash
 export NODE_HOME=/home/shw/MySoftwares/node-v12.8.0-linux-x64
 export PATH=$PATH:$NODE_HOME/bin
@@ -92,16 +94,16 @@ export PATH=$PATH:$NODE_HOME/bin
 ```bash
 source /etc/profile
 ```
-将目录软链接到全局环境下（命令后面的/usr/local/bin/node是固定的）
+将目录软链接到全局环境下（命令后面的`/usr/local/bin/node`是固定的）
 ```bash
 sudo ln -s /home/shw/MySoftwares/node-v12.8.0-linux-x64/node /usr/local/bin/node
 sudo ln -s /home/shw/MySoftwares/node-v12.8.0-linux-x64/npm /usr/local/bin/npm
 ```
-这样安装好了以后使用npm安装的包(比如：ionic serve)，使用包的命令时可能会提示找不到命令，没关系，在用户目录下终端执行下面命令(固定写法)：
+这样安装好了以后使用`npm`安装的包(比如：`ionic serve`)，使用包的命令时可能会提示找不到命令，没关系，在用户目录下终端执行下面命令(固定写法)：
 ```bash
 echo -e "export PATH=$(npm prefix -g)/bin:$PATH" >> ~/.bashrc && source ~/.bashrc
 ```
-这样我们在所有用户下，都可以使用npm，也可以使用npm安装的包的命令。成功的将nodejs安装并配置到全局环境下。
+这样我们在所有用户下，都可以使用`npm`，也可以使用`npm`安装的包的命令。成功的将`nodejs`安装并配置到全局环境下。
 
 安装完后，打开命令行终端，输入:
 ```bash
@@ -120,11 +122,11 @@ npm config set registry https://registry.npm.taobao.org
 
 ## 3. 安装Hexo
 ---
-前面`git`和`nodejs`安装好后，就可以安装`hexo`了，你可以先创建一个文件夹`MyBlog`，用来存放自己的博客文件，然后cd到这个文件夹下（或者在这个文件夹下直接右键git bash打开）。
+前面`git`和`nodejs`安装好后，就可以安装`hexo`了，你可以先创建一个文件夹`MyBlog`，用来存放自己的博客文件，然后`cd`到这个文件夹下（或者在这个文件夹下直接右键`git bash`打开）。
 
 比如我的博客文件都存放在`D:\Study\MyBlog`目录下。
 
-在该目录下右键点击`Git Bash Here`，打开git的控制台窗口，以后我们所有的操作都在`git`控制台进行，就不用`Windows`自带的`cmd`了。
+在该目录下右键点击`Git Bash Here`，打开`git`的控制台窗口，以后我们所有的操作都在`git`控制台进行，就不用`Windows`自带的`cmd`了。
 
 定位到该目录下，输入`npm install -g hexo-cli`安装`Hexo`。可能会有几个报错，无视它就行。
 ```bash
@@ -132,18 +134,18 @@ npm install -g hexo-cli
 ```
 安装完后输入`hexo -v`验证是否安装成功。
 
-至此hexo就安装完了。
+至此`hexo`就安装完了。
 
-接下来初始化一下hexo,即初始化我们的网站，输入`hexo init`初始化文件夹
+接下来初始化一下`hexo`,即初始化我们的网站，输入`hexo init`初始化文件夹
 ```bash
 hexo init MyBlog
 ```
-这个MyBlog可以自己取什么名字都行，然后，接着输入`npm install`安装必备的组件。
+这个`MyBlog`可以自己取什么名字都行，然后，接着输入`npm install`安装必备的组件。
 ```bash
 cd MyBlog      //进入这个MyBlog文件夹
 npm install
 ```
-新建完成后，指定文件夹MyBlog目录下有：
+新建完成后，指定文件夹`MyBlog`目录下有：
 - `node_modules:` 依赖包
 - `public：`存放生成的页面
 - `scaffolds：`生成文章的一些模板
@@ -163,18 +165,18 @@ hexo server(或者简写:hexo s）)
 
 ## 4. 注册Github账号创建个人仓库
 ---
-接下来就去注册一个github账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。
+接下来就去注册一个`github`账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。
 
-打开[https://github.com/](https://github.com/)，新建一个项目仓库New repository，如下所示：
+打开[https://github.com/](https://github.com/)，新建一个项目仓库`New repository`，如下所示：
 ![](4.png)
-然后如下图所示，输入自己的项目名字，后面一定要加`.github.io`后缀，README初始化也要勾上。
+然后如下图所示，输入自己的项目名字，后面一定要加`.github.io`后缀，`README`初始化也要勾上。
 ![](5.png)
-> 要创建一个和你用户名相同的仓库，后面加.http://github.io，只有这样，将来要部署到`GitHub page`的时候，才会被识别，也就是http://xxxx.github.io，其中xxx就是你注册GitHub的用户名。例如我的：http://shw2018.github.io
+> 要创建一个和你用户名相同的仓库，后面加.http://github.io，只有这样，将来要部署到`GitHub page`的时候，才会被识别，也就是http://xxxx.github.io，其中xxx就是你注册`GitHub`的用户名。例如我的：http://shw2018.github.io
 
 ## 5. 生成SSH添加到GitHub
 ---
 生成`SSH`添加到`GitHub`，连接`Github`与本地。
-右键打开git bash，然后输入下面命令：
+右键打开`git bash`，然后输入下面命令：
 ```bash
 git config --global user.name "yourname"
 git config --global user.email "youremail"
@@ -190,8 +192,8 @@ git config user.name
 git config user.email
 ```
 
-然后创建SSH,一路回车
-> `ssh`，简单来讲，就是一个秘钥，其中，`id_rsa`是你这台电脑的私人秘钥，不能给别人看的，`id_rsa.pub`是公共秘钥，可以随便给别人看。把这个公钥放在`GitHub`上，这样当你链接`GitHub`自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到`GitHub`上。
+然后创建`SSH`,一路回车
+> `ssh`，简单来讲，就是一个秘钥，其中，`id_rsa`是你这台电脑的私人秘钥，不能给别人看的，`id_rsa.pub`是公共秘钥，可以随便给别人看。把这个公钥放在`GitHub`上，这样当你链接`GitHub`自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过`git`上传你的文件到`GitHub`上。
 
 ```bash
 ssh-keygen -t rsa -C "youremail"
@@ -247,7 +249,7 @@ hexo deploy
 
 > **不过，这一步不是必要的，如果目前还不想买域名可以先跳过，继续看后面的，以后想买域名了在还看这块**
 
-首先你得购买一个专属域名，xx云都能买，看你个人喜好了。
+首先你得购买一个专属域名，`xx`云都能买，看你个人喜好了。
 
 这篇以腾讯云为例，腾讯云官网购买：![](9.png)
 然后实名认证后进入腾讯云控制台，点云解析进去，找到你刚买的域名，点进去添加两条解析记录，如下图所示：
@@ -278,8 +280,8 @@ hexo deploy
 ---
 我们要定制自己的博客的话，首先就要来了解一下`Hexo`博客的一些目录和文件的作用，以及如何平滑更换漂亮的主题模板并加入自己的定制源代码实现个性化定制
 
-## 先了解Hexo相关目录文件
-### 1. 博客目录构成介绍
+## 1. Hexo相关目录文件
+### 1.1 博客目录构成介绍
 ---
 从上图可以看出，博客的目录结构如下：
 ```
@@ -294,21 +296,21 @@ hexo deploy
 	- tags
 - themes
 ```
-`node_modules`是node.js各种库的目录，`public`是生成的网页文件目录，`scaffolds`里面就三个文件，存储着新文章和新页面的初始设置，`source`是我们最常用到的一个目录，里面存放着文章、各类页面、图像等文件，`themes`存放着主题文件，一般也用不到。
+`node_modules`是`node.js`各种库的目录，`public`是生成的网页文件目录，`scaffolds`里面就三个文件，存储着新文章和新页面的初始设置，`source`是我们最常用到的一个目录，里面存放着文章、各类页面、图像等文件，`themes`存放着主题文件，一般也用不到。
 
 我们平时写文章只需要关注`source/_posts`这个文件夹就行了。
 
-### 2. hexo基本配置
+### 1.2 hexo基本配置
 ---
 在文件根目录下的`_config.yml`，就是整个`hexo`框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的[配置描述](https://hexo.io/zh-cn/docs/configuration)。
 
-#### 网站
+#### 1.2.1 网站
 ---
 参数描述`title`网站标题`subtitle`网站副标题`description`网站描述`author`您的名字`language`网站使用的语言`timezone`网站时区。`Hexo` 默认使用您电脑的时区。时区列表。比如说：`America/New_York, Japan`, 和 `UTC` 。
 
 其中，`description`主要用于`SEO`，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。`author`参数用于主题显示文章的作者。
 
-#### 网址
+#### 1.2.2 网址
 ---
 参数描述`url`网址`root`网站根目录`permalink`文章的 [永久链接](https://hexo.io/zh-cn/docs/permalinks) 格式`permalink_defaults`永久链接中各部分的默认值
 
@@ -328,13 +330,13 @@ theme: landscap
 ```
 `theme`就是选择什么主题，也就是在`themes`这个文件夹下，在官网上有很多个主题，默认给你安装的是`lanscape`这个主题。当你需要更换主题时，在官网上下载，把主题的文件放在`themes`文件夹下，再修改这个主题参数就可以了。
 
-#### Front-matter
+#### 1.2.3 Front-matter
 ---
 `Front-matter` 是`md`文件最上方以 `--- `分隔的区域，用于指定个别文件的变量，举例来说：
 
 ```
-title: Hello World
-date: 2018/8/5 20:46:25
+title: Hexo+Github博客搭建记录
+date: 2019-08-10 21:44:44
 ```
 下是预先定义的参数，您可在模板中使用这些参数值并加以利用。
 
@@ -343,17 +345,28 @@ date: 2018/8/5 20:46:25
 其中，分类和标签需要区别一下，分类具有顺序性和层次性，也就是说` Foo`,` Bar `不等于` Bar`, `Foo`；而标签没有顺序和层次。
 ```yml
 ---
-categories:
-- Diary
+title: Hexo+Github博客搭建记录
+date: 2019-08-10 21:44:44
+author: 洪卫
+img: /medias/banner/7.jpg
+coverImg: /medias/banner/7.jpg
+top: true
+cover: true
+toc: true
+password: 5f15b28ffe43f8be4f239bdd9b69af9d80dbafcb20a5f0df5d1677a120ae9110
+mathjax: true
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
 tags:
-- Musics
-- Games
-- ...
+- Hexo
+- Github
+- 博客
+categories:
+- 软件安装与配置
 ---
 ```
-#### layout（布局）
+#### 1.2.4 layout（布局）
 ---
-**post**
+**1.2.4.1 post**
 
 当你每一次使用代码
 ```bash
@@ -369,7 +382,7 @@ hexo new [layout] <title>
 ```
 只不过这个`layout`默认是`post`罢了。
 
-**page**
+**1.2.4.2 page**
 
 如果你想另起一页，那么可以使用
 ```bash
@@ -377,7 +390,7 @@ hexo new page newpage
 ```
 系统会自动给你在`source`文件夹下创建一个`newpage`文件夹，以及`newpage`文件夹中的`index.md`，这样你访问的`newpage`对应的链接就是http://xxx.xxx/newpage
 
-**draft**
+**1.2.4.3 draft**
 
 `draft`是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以
 ```bash
@@ -396,19 +409,38 @@ hexo publish draft newdraft
 就会自动把`newdraft.md`发送到`post`中。
 
 
-## 更换主题
+## 2. 更换主题
 ---
 我们在了解`Hexo`博客文件基础之后，知道主题文件就放在`themes`文件下，那么我们就可以去Hexo官网下载喜欢的主题，复制进去然后修改参数即可。
 网上大多数主题都是github排名第一的`Next`主题，但是我个人不是很喜欢，我在网上看到一个主题感觉还不错：[hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)，地址在[传送门](https://github.com/blinkfox/hexo-theme-matery)。这个主题看着比较漂亮，并且响应式比较友好，点起来很舒服，功能也比较很多。
 
 > 当然，人各有异，这个主题风格也不一定是你喜欢，那么你也可以跟着这教程类似的方法替换成你喜欢的就行了。
 
+>特性：
+- 简单漂亮，文章内容美观易读
+- [Material Design](https://material.io/) 设计
+- 响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现
+- 首页轮播文章及每天动态切换 `Banner` 图片
+- 瀑布流式的博客文章列表（文章无特色图片时会有 `24` 张漂亮的图片代替）
+- 时间轴式的归档页
+- **词云**的标签页和**雷达图**的分类页
+- 丰富的关于我页面（包括关于我、文章统计图、我的项目、我的技能、相册等）
+- 可自定义的数据的友情链接页面
+- 支持文章置顶和文章打赏
+- 支持 `MathJax`
+- `TOC` 目录
+- 可设置复制文章内容时追加版权信息
+- 可设置阅读文章时做密码验证
+- [Gitalk](https://gitalk.github.io/)、[Gitment](https://imsun.github.io/gitment/)、[Valine](https://valine.js.org/) 和 [Disqus](https://disqus.com/) 评论模块（推荐使用 `Gitalk`）
+- 集成了[不蒜子统计](http://busuanzi.ibruce.info/)、谷歌分析（`Google Analytics`）和文章字数统计等功能
+- 支持在首页的音乐播放和视频播放功能
+
 他的介绍文档写得非常的详细，还有中英文两个版本。效果图如下：
 ![](12.png)
 
 首先先按照文档教程安装一遍主题，然后是可以正常打开的，如果你是一般使用的话，基本没啥问题了。不过有些地方有些地方可以根据你自己的习惯和喜好修改一下， 下面记录一下我这个博客修改了的一些地方。
 
-### 新建文章模板修改
+### 2.1 新建文章模板修改
 ---
 首先为了新建文章方便，我们可以修改一下文章模板，建议将`/scaffolds/post.md`修改为如下代码：
 ```json
@@ -425,11 +457,11 @@ tags:
 categories:
 ---
 ```
-这样新建文章后 一些Front-matter参数不用你自己补充了，修改对应信息就可以了。
+这样新建文章后 一些`Front-matter`参数不用你自己补充了，修改对应信息就可以了。
 
-### 添加404页面
+### 2.2 添加404页面
 ---
-原来的主题没有404页面，我们加一个。首先在`/source/`目录下新建一个`404.md`，内容如下：
+原来的主题没有`404`页面，我们加一个。首先在`/source/`目录下新建一个`404.md`，内容如下：
 ```json
 title: 404
 date: 2019-08-5 16:41:10
@@ -469,9 +501,9 @@ description: "Oops～，我崩溃了！找不到你想要的页面 :("
 </script>
 ```
 
-### “关于”页面增加简历（可选）
+### 2.3“关于”页面增加简历（可选）
 ---
-修改`/themes/matery/layout/about.ejs`，找到`<div class="card">`标签，然后找到它对应的`</div>`标签，接在后面新增一个card，语句如下：
+修改`/themes/matery/layout/about.ejs`，找到`<div class="card">`标签，然后找到它对应的`</div>`标签，接在后面新增一个`card`，语句如下：
 ```html
 <div class="card">
     <div class="card-content">
@@ -486,21 +518,21 @@ description: "Oops～，我崩溃了！找不到你想要的页面 :("
     </div>
 </div>
 ```
-这样就会多出一张card，然后可以在`/source/about/index.md`下面写上你的简历了，当然这里的位置随你自己设置，你也可以把简历作为第一个card。
+这样就会多出一张`card`，然后可以在`/source/about/index.md`下面写上你的简历了，当然这里的位置随你自己设置，你也可以把简历作为第一个`card`。
 
-### 数学公式渲染和代码高亮
+### 2.4 数学公式渲染和代码高亮
 ---
-**解决mathjax与代码高亮的冲突**
+**2.4.1 解决mathjax与代码高亮的冲突**
 
-如果你按照教程安装了代码高亮插件`hexo-prism-plugin`，单独使用是没有问题的，但如果你又使用了mathjax，并且按照网上教程，安装`kramed`插件并修改了js文件里的正则表达式（为了解决markdown和mathjax的语法冲突），好了，那你的代码就无法高亮了。解决方法很简单，别用`kramed`插件了，还用原来自带的`marked`插件，直接改它的正则表达式就行了。
+如果你按照教程安装了代码高亮插件`hexo-prism-plugin`，单独使用是没有问题的，但如果你又使用了`mathjax`，并且按照网上教程，安装`kramed`插件并修改了`js`文件里的正则表达式（为了解决`markdown`和`mathjax`的语法冲突），好了，那你的代码就无法高亮了。解决方法很简单，别用`kramed`插件了，还用原来自带的`marked`插件，直接改它的正则表达式就行了。
 
-**加数学公式显示**
+**2.4.2 加数学公式显示**
 
 打开`D:\study\program\blog\themes\beantech\layout\post.ejs`，在最下方粘贴如下代码：
 ```javascript
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ```
-由于markdown语法与mathjax语法存在冲突，所以还需要修改源文件。
+由于`markdown`语法与`mathjax`语法存在冲突，所以还需要修改源文件。
 
 打开`D:\Study\MyBlog\node_modules\marked\lib\marked.js`
 `escape: `处替换成：
@@ -528,7 +560,7 @@ $y = f(x)$
 ```
 > 注意上面花括号之间有空格！
 
-### 增加建站时间
+### 2.5 增加建站时间
 ---
 修改`/themes/matery/layout/_partial/footer.ejs`文件，在最后加上：
 ```js
@@ -568,12 +600,12 @@ $y = f(x)$
     siteTime();
 </script>
 ```
-然后在合适的地方（比如copyright声明后面）加上下面的代码就行了：
+然后在合适的地方（比如`copyright`声明后面）加上下面的代码就行了：
 ```html
 <span id="sitetime"></span>
 ```
 
-### 修改不蒜子初始化计数
+### 2.6 修改不蒜子初始化计数
 因为不蒜子至今未开放注册，所以没办法在官网修改初始化，只能自己动手了。和上一条一样，在`/themes/matery/layout/_partial/footer.ejs`文件最后加上：
 ```js
 <script>
@@ -630,7 +662,7 @@ $y = f(x)$
 ```
 其实就是增加了两个`style='display:none'`而已。
 
-### 添加动漫人物
+### 2.7 添加动漫人物
 其实三步就行了，不用像网上有些教程那么复杂。
 
 **第一步：**
@@ -665,22 +697,68 @@ live2d:
 ```
 然后`hexo g`再`hexo s`就能预览出效果了，但是有个注意的地方，**这个动漫人物最好不要和不蒜子同时使用**，不然不蒜子会显示不出来。至于解决办法后续更新。
 
-### 添加评论插件
+> ***解决动漫人物和不蒜子不能同时使用的`bug`（2019.08.11）：
+
+打开`themes\matery\layout\_partial`中的`footer.ejs`，将本站总访问量和访客数的代码改为如下：
+
+```js
+<% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>      
+    <span id="busuanzi_container_site_pv" style='display:none'></span>
+        <i class="fa fa-heart-o"></i>
+        本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+
+<% } %>
+
+<% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
+    <span id="busuanzi_container_site_uv" style='display:none'></span>
+        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+    
+<% } %>
+```
+变化就在下面两句，将源代码对应字段后面的`＜/span＞`写在前面了。
+
+```js
+<span id="busuanzi_container_site_pv" style='display:none'></span>
+<span id="busuanzi_container_site_uv" style='display:none'></span>
+```
+> ***发现按照上面改了过后，又出现一个新`bug`：文章头部的阅读次数不显示了，解决办法：（2019.08.11）：
+
+打开`themes\matery\layout\_partial`中的`post-detail.ejs`，找到对应代码字段：
+```js
+<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+    <div id="busuanzi_container_page_pv" class="info-break-policy">
+        <i class="fa fa-eye fa-fw"></i><%- __('readCount') %>:&nbsp;&nbsp;
+        <span id="busuanzi_value_page_pv" ></span>
+    </div>
+
+<% } %>
+```
+修改为下面的就可以了：
+```js
+<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+        <span id="busuanzi_container_site_pv" style='display:none'></span>
+        <i class="fa fa-eye fa-fw"></i><%- __('readCount') %>:&nbsp;&nbsp;
+        <span id="busuanzi_value_page_pv" ></span>
+
+<% } %>
+```
+
+### 2.8 添加评论插件
 ---
-由于这个主题自带了gittalk、gitment、valine等评论插件，所以我们只需要对应插件参数就行了，这个博客用的是gittalk，如下：![](13.png)
+由于这个主题自带了`gittalk`、`gitment`、`valine`等评论插件，所以我们只需要对应插件参数就行了，这个博客用的是`gittalk`，如下：![](13.png)
 当然也可以用其他评论插件，只需要配置对应项就是了，不是自带的可以照着网上的教程自己弄一个，类似的文章有很多，可以搜索关键字就行了。
 
 
-### 添加网易云音乐BGM
+### 2.9 添加网易云音乐BGM
 ---
-写文章的时候，想插入一段BGM怎么办？
+写文章的时候，想插入一段`BGM`怎么办？
 
 其实我们可以借助一些在线音乐的外链播放方式，首先打开网易云网页版，找到想听的歌曲，然后点击生成外链：
 ![](14.png)
 
 可能你会遇到问题，比如点击生成外链会提示你由于版权原因，不能生成，那么可以用下面办法(目前还有效，不知道后面会不会失效)
-1. (以 Chrome 为例，其他浏览器类似) 打开歌单页面，在“生成外链播放器”上右击，点击审查元素（检查）ctrl+shift+i；
-2. 接着找到生成外链播放器这段文字直接双击复制前面的/outchain/2/20707408/ ![](15.png)
+1. (以 `Chrome `为例，其他浏览器类似) 打开歌单页面，在“生成外链播放器”上右击，点击审查元素（检查）ctrl+shift+i；
+2. 接着找到生成外链播放器这段文字直接双击复制前面的`/outchain/2/20707408/` ![](15.png)
 3. 然后在浏览器地址栏修改歌单链接，示例：http://music.163.com/#//outchain/2/20707408/
 4. 然后就转到外链设置页面了。
 
@@ -693,9 +771,11 @@ live2d:
 ```
 # 第三部分 优化
 ---
-hexo添加各种优化功能，比如SEO优化等。
+`hexo`添加各种优化功能，比如`SEO`优化等。
 待续......
-
+## 1. 优化代码块样式
+---
+由于代码高亮插件prism_plugin的样式没有行号显示和代码块整体复制功能，不是很方便，为了优化观感和易用性，我们可以对其进行修改：
 
 ##  一些注意事项
 ---
@@ -713,9 +793,9 @@ categories: 分类
 
 ### 备份博客源文件
 ---
-有时候我们想换一台电脑继续写博客，最简单的方法就是把博客整个目录拷贝过去，就是这么暴力。不过，这种方法有个问题就是要是那天电脑崩了，本地源文件丢失了，比较麻烦，所以这时候就可以将博客目录下的所有源文件都上传到github上面。
+有时候我们想换一台电脑继续写博客，最简单的方法就是把博客整个目录拷贝过去，就是这么暴力。不过，这种方法有个问题就是要是那天电脑崩了，本地源文件丢失了，比较麻烦，所以这时候就可以将博客目录下的所有源文件都上传到`github`上面。
 
-首先在github博客仓库下新建一个分支`hexo`，然后`git clone`到本地，把`.git`文件夹拿出来，放在博客根目录下。
+首先在`github`博客仓库下新建一个分支`hexo`，然后`git clone`到本地，把`.git`文件夹拿出来，放在博客根目录下。
 
 然后`git branch -b hexo`切换到`hexo`分支，然后`git add .`，然后`git commit -m "xxx"`，最后`git push origin hexo`提交就行了。
 

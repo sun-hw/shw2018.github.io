@@ -62,13 +62,14 @@
                     </div>
                     <% } %>
                 <% } %>
-				
-				<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                
+                <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
                         <i class="fa fa-eye fa-fw"></i><%- __('readCount') %>:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				<% } %>
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                <% } %>
+
             </div>
         </div>
         <hr class="clearfix">
@@ -84,7 +85,20 @@
 
             <%- partial('_partial/share') %>
 
-            <%- partial('_partial/reprint-statement') %>
+            <% - partial('_partial/reprint-statement') %>
+            
+            <%# 老版转载声明字段%>
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;<%= __('reprint') %>:
+                    </span>
+                    <a href="<%- config.url %>" class="b-link-green"><%- config.title %></a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="<%- url_for(page.path) %>" class="b-link-green"><%= page.title %></a>
+                </p>
+            </div>
+
         </div>
     </div>
 

@@ -24,6 +24,9 @@
     "hexo-renderer-marked": "^1.0.1",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "highlight": "^0.2.4",
+    "live2d-widget-model-shizuku": "^1.0.5",
+    "live2d-widget-model-wanko": "^1.0.5"
   }
 }
