@@ -19,6 +19,9 @@ menu:
   About:
     url: /about
     icon: fa-user-circle-o
+  Guestbook:
+    url: /guestbook
+    icon: fa-envelope
   Contact:
     url: /contact
     icon: fa-envelope
