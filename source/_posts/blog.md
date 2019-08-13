@@ -777,6 +777,435 @@ live2d:
 ---
 由于代码高亮插件prism_plugin的样式没有行号显示和代码块整体复制功能，不是很方便，为了优化观感和易用性，我们可以对其进行修改：
 
+
+
+## 2. 网站SEO优化
+---
+网站推广是一个比较烦人的事情，特别是对于专心搞技术的来说，可能就不是很擅长，那么怎么才能让别人知道我们网站呢？也就是说我们需要想办法让别人通过搜索就可以搜索到博客的内容，给我们带来自然流量，这就需要`seo`优化,让我们的站点变得对搜索引擎友好
+> `SEO`是由英文`Search Engine Optimization`缩写而来， 中文意译为“搜索引擎优化”。`SEO`是指通过站内优化比如网站结构调整、网站内容建设、网站代码优化等以及站外优化。
+
+### 让百度收录你的站点
+---
+首先要做的就是让各大搜索引擎收录你的站点，我们在刚建站的时候各个搜索引擎是没有收录我们网站的，在搜索引擎中输入`site:<域名>`,如果如下图所示就是说明我们的网站并没有被百度收录。我们可以直接点击下面的“网址提交”来提交我们的网站![查看站点是否被百度收录](18.png)
+
+### 验证网站所有权
+---
+登录百度站长平台：http://zhanzhang.baidu.com,只要有百度旗下的账号就可以登录，登录成功之后在站点管理中点击[添加网站](http://zhanzhang.baidu.com/site/siteadd)然后输入你的站点地址。
+> 注意，这里需要输入我们自己购买的域名,不能使用`xxx.github.io`之类域名.因为`github`是不允许百度的`spider`（蜘蛛）爬取`github`上的内容的，所以如果想让你的站点被百度收录，只能使用自己购买的域名![向百度站长添加网站](21.png)
+
+在填完网址选择完网站的类型之后需要验证网站的所有权，验证网站所有权的方式有三种：
+- 文件验证。
+- `html`标签验证
+- `CNAME`解析验证（**推荐使用**）
+
+![验证网站所有权](23.png)
+
+其实使用哪一种方式都可以，都是比较简单的。
+> **但是一定要注意，使用文件验证文件存放的位置需要放在source文件夹下，如果是html文件那么hexo就会将其编译，所以必须要加上的`layout:false`，这样就不会被hexo编译。（如果验证文件是txt格式的就不需要）**
+
+其他两种方式也是很简单的，我个人推荐`文件验证`和`CNAME`验证，`CNAME`验证最为简单，只需加一条解析就好~![添加云解析](23.png)
+
+
+### 生成网站地图
+---
+我们需要使用`npm`自动生成网站的`sitemap`，然后将生成的`sitemap`提交到百度和其他搜索引擎
+#### 安装sitemap插件
+---
+```bash
+npm install hexo-generator-sitemap --save     
+npm install hexo-generator-baidu-sitemap --save
+```
+#### 修改博客配置文件
+---
+在根目录配置文件`.yml`中修改`url`为你的站点地址
+```yml
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+# url: https://shw2018.github.io/
+url: https://sunhwee.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+```
+**执行完`hexo g`命令之后就会在网站根目录生成`sitemap.xml`文件和`baidusitemap.xml文件`**，可以通过https://www.sunhwee.com/baidusitemap.xml，查看该文件是否生成，其中`sitemap.xml`文件是搜索引擎通用的文件，`baidusitemap.xml`是百度专用的`sitemap`文件。
+
+### 向百度提交链接
+---
+然后我们就可以将我们生成的sitemap文件提交给百度，还是在百度站长平台，找到链接提交，这里我们可以看到有两种提交方式，自动提交和手动提交，自动提交又分为主动推送、自动推送和sitemap
+> 如何选择链接提交方式
+> 1. 主动推送：最为快速的提交方式，推荐您将站点当天新产出链接立即通过此方式推送给百度，以保证新链接可以及时被百度收录。
+> 2. 自动推送：最为便捷的提交方式，请将自动推送的JS代码部署在站点的每一个页面源代码中，部署代码的页面在每次被浏览时，链接会被自动推送给百度。可以与主动推送配合使用。
+> 3. sitemap：您可以定期将网站链接放到sitemap中，然后将sitemap提交给百度。百度会周期性的抓取检查您提交的sitemap，对其中的链接进行处理，但收录速度慢于主动推送。
+> 4. 手动提交：一次性提交链接给百度，可以使用此种方式。
+
+一般主动提交比手动提交效果好，这里介绍主动提交的三种方法
+从效率上来说：
+> **主动推送>自动推送>sitemap**
+![连接提交](27.png)
+
+#### 主动推送方式
+安装插件`hexo-baidu-url-submit`
+```bash
+npm install hexo-baidu-url-submit --save
+```
+然后再根目录的配置文件中新增字段
+```yml
+baidu_url_submit:
+  count: 80      # 提交最新的一个链接
+  host: www.sunhwee.com    # 在百度站长平台中注册的域名
+  token: xxxxxxxxxxxxxxxxx    # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt     # 文本文档的地址， 新链接会保存在此文本文档里
+```
+在加入新的deploy
+```yml
+deploy:
+ - type: baidu_url_submitter
+```
+
+> 注意,这里多个 `type` 的写法应该这么写,前面那个 `type` 是我推送到 `Github` 与 `Coding `的`page`页面的配置,后面再讲这个.
+
+ 这样执行`hexo deploy`的时候，新的链接就会被推送了
+
+
+#### 设置自动推送
+在主题配置文件下设置,将baidu_push设置为true：
+```
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+baidu_push: true
+```
+然后就会将一下代码自动推送到百度，位置是themes\next\layout\_scripts\baidu_push.swig,这样每次访问博客中的页面就会自动向百度提交sitemap
+```
+{% if theme.baidu_push %}
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+{% endif %}
+```
+#### sitemap
+将我们上一步生成的sitemap文件提交到百度就可以了~
+![将sitemap提交到百度](http://img.blog.csdn.net/20170504211420159?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+我记得被百度收录过程还是蛮久的，一度让我以为我的方法有问题，提交链接在站长工具中有显示大概是有两天的时候，站点被百度收录大概花了半个月= =，让大家看一下现在的成果
+在百度搜索`site:cherryblog.site`已经可以搜索到结果
+![站点已被百度收录](http://img.blog.csdn.net/20170504212208725?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+在搜索框输入域名也可以找到站点
+![站点已被百度收录](http://img.blog.csdn.net/20170504212800850?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+输入关键字的名字也可以在第二页就找到呢，好开森~
+![站点已被百度收录](http://img.blog.csdn.net/20170504213218169?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+## 让google收录你的站点
+相比于百度，google的效率实在不能更快，貌似十分钟左右站点就被收录了，其实方法是和百度是一样的，都是先验证你的站点所有权，然后提交sitemap
+google站点平台：https://www.google.com/webmasters/，然后就是注册账号、验证站点、提交sitemap，一步一步来就好，过不了过久就可以被google收录了
+![站点已被google收录](http://img.blog.csdn.net/20170504221124520?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![站点已被google收录](http://img.blog.csdn.net/20170504221145864?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![站点已被google收录](http://img.blog.csdn.net/20170504221202442?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3Vuc2hpbmU5NDAzMjY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+## 让其他搜索引擎收录你的站点
+除了百度和google两大搜索引擎，还有搜狗、360等其他的搜索引擎，流程都是一样的
+ ，大家就自行选择添加哈，这里就不再赘述了~
+## 优化你的url
+seo搜索引擎优化认为，网站的最佳结构是**用户从首页点击三次就可以到达任何一个页面**，但是我们使用hexo编译的站点打开文章的url是：sitename/year/mounth/day/title四层的结构，这样的url结构很不利于seo，爬虫就会经常爬不到我们的文章，于是，我们可以将url直接改成sitename/title的形式，并且title最好是用英文，在根目录的配置文件下修改permalink如下：
+```
+url: http://cherryblog.site
+root: /
+permalink: :title.html
+permalink_defaults:
+```
+## 其他seo优化
+seo优化应该说是一个收益延迟的行为，可能你做的优化短期内看不到什么效果，但是一定要坚持，seo优化也是有很深的可以研究的东西，从我们最初的网站设计，和最基础的标签的选择都有很大的关系，网站设计就如我们刚刚说的，要让用户点击三次可以到达网站的任何一个页面，要增加高质量的外链，增加相关推荐（比如说我们经常见到右侧本站的最高阅读的排名列表），然后就是给每一个页面加上keyword和描述
+在代码中，我们应该写出能让浏览器识别的语义化HTML，这样有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；并且对外链设置nofollow标签，避免spider爬着爬着就爬出去了（减少网站的跳出率），并且我们要尽量在一些比较大的网站增加我们站点的曝光率，因为spider会经常访问大站，比如我们在掘金等技术社区发表文章中带有我们的站点，这样spider是很有可能爬到我们中的站点的，so....
+ - 网站**外链**的推广度、数量和质量
+ - 网站的**内链**足够强大
+ - 网站的**原创**质量
+ - 网站的**年龄**时间
+ - 网站的**更新频率**（更新次数越多越好）
+ - 网站的**服务器**
+ - 网站的**流量**：流量越高网站的权重越高
+ - 网站的**关键词排名**：关键词排名越靠前，网站的权重越高
+ - 网站的**收录**数量：网站百度收录数量越多，网站百度权重越高
+ - 网站的浏览量及深度：**用户体验**越好，网站的百度权重越高
+
+
+
+
+## 2. 网站SEO优化
+---
+网站 SEO 优化
+关于网站 SEO 这一块我主要参考了这位小姐姐的这篇文章,但是有些发现她有些地方写的不是很清楚,自己也在这一块设置时也摸索了半天,所以直接像大家分享一下我的踩坑经验.
+让百度收录你的站点
+我们直接在百度中搜索site:你的域名就可以查看百度是否已经收录你的网站,如果没有收录的话,你就要去去登录百度站长平台在站点管理中点击添加网站,然后输入你的站点地址, 注意,这里需要输入我们自己购买的域名,不能使用xxx.github.io之类域名.
+
+步骤如下:
+
+输入网站: 添加域名时建议是带上www的前缀
+站点属性: 选择自己网站类型
+验证网站: 验证网站的所有权,这里主要有以下三种
+
+文件验证: 文件验证文件存放的位置需要放在source文件夹下,txt 格式的不会被 hexo 预编译,其他格式要在头部加上layout: false
+
+HTML 标签验证: 将他给你的代码添加到网站首页的 head 标签内
+CNAME 验证: 推荐使用,将对应的 CNAME 文件放在你的 source 文件夹中即可,只要在其中写上你的域名地址就行;除此之外还会要求你到自己的域名提供商(我的是万网)上添加 CNAME 的解析(会面在国内外分流这一块会与更详细的解析说明);
+
+生成网站地图 --- sitemap
+这里需要我们安装下面两个插件,先执行下面命令
+npm i hexo-generator-sitemap hexo-generator-baidu-sitemap -S
+
+再在你的站点配置文件中修改 URL 为你的站点地址
+
+
+当你在 hexo g 时,会在public文件夹中生成sitemap.xml 和baidusitemap.xml 两个文件,如果你已经提前将你的 hexo 部署到网上,这是可以直接打开http://yoururl/sitemap.xml和http://yoururl/baidusitemap.xml来查看.(这两者的区别在于 baidusitemap.xml 是百度搜索引擎的专用文件,另一个是通用).
+向百度提交链接
+
+如何选择链接提交方式
+1、主动推送：最为快速的提交方式，推荐您将站点当天新产出链接立即通过此方式推送给百度，以保证新链接可以及时被百度收录。
+2、自动推送：最为便捷的提交方式，请将自动推送的JS代码部署在站点的每一个页面源代码中，部署代码的页面在每次被浏览时，链接会被自动推送给百度。可以与主动推送配合使用。
+3、sitemap：您可以定期将网站链接放到sitemap中，然后将sitemap提交给百度。百度会周期性的抓取检查您提交的sitemap，对其中的链接进行处理，但收录速度慢于主动推送。
+4、手动提交：一次性提交链接给百度，可以使用此种方式。
+
+这里我推荐大家使用主动推送,当你主动推送时,可以缩短百度爬虫发现您站点新链接的时间,使新发布的页面可以在第一时间被百度收录;对于网站的最新原创内容，使用主动推送功能可以快速通知到百度，使内容可以在转发之前被百度发现.
+使用主动推送
+
+需要先安装插件npm i hexo-baidu-url-submit -S
+
+然后再在站点配置文件中按如下方式新增字段
+
+baidu_url_submit:
+  count: 10 # 提交最新的链接数
+  host: crowncj.com # 在百度站长平台中注册的域名,虽然官方推荐要带有 www, 但可以不带.
+  token:  XXXXX # 你的秘钥,每个人都不一样,获取方法在下面
+  path: baidu_urls.txt # 文本文档的地址,新链接会保存在此文本文档里
+
+
+然后加入新的 deploy
+
+deploy:
+ - type:baidu_url_submitter
+
+注意,这里多个 type 的写法应该这么写,前面那个 type 是我推送到 Gitub 与 Coding 的page页面的配置,后面再讲这个.
+
+
+
+
+
+
+
+密钥的获取位置在网页抓取中的链接提交这一块,如下所示:
+
+
+
+
+
+
+
+
+最后当你执行hexo d时新的连接就会被推送上去.
+推送成功时,会有如下终端提示,各种不同的推送反馈字段说明在这里查看,一般来说,推送失败都是地址不相符造成的,我们只需对比baidu_url_submit在public中生成的baidu_urls.txt的地址,与自己填写在host字段中是否一样即可,这里需要注意的是,多加www会导致上传失败(血的教训...)
+
+
+
+
+
+
+
+
+让 Google 收录你的网站
+
+登录 Google 网络站长,点击添加属性按要求添加你的网站
+
+
+验证你的网站所有权,我推荐使用 HTML 文件上传的方式,将他给你的html 文件放入 sources  文件夹下,但 html 文件默认会被 hexo 预编译,所以这里,我们要手动设置让 hexo 不要编译该文件,在文件开始添加layout:false即可.
+
+
+
+
+
+
+
+
+
+
+添加 sitemap : 进入 Google Search Console - 抓取 - 站点地图,点击「添加/测试站点地图」,输入你的博客网址. 若无报错则站点地图提交成功
+提交 robots.txt:
+
+
+robots.txt 是一种存放于网站根目录下的 ASCII 编码的文本文件，它的作用是告诉搜索引擎此网站中哪些内容是可以被爬取的，哪些是禁止爬取的。robots.txt 放在博客目录下的 source 文件夹中，博客生成后在站点目录 /public/ 下。
+
+我的 robots.txt 文件内容如下：
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /about/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+robots.txt 文件更新至网站后可进入 Google Search Console - 抓取 - robots.txt 测试工具进行测试。
+
+这里部分参考自Hexo 博客搜索 SEO 优化 -- 谷歌篇
+
+优化你的 URL
+
+这段话参考自上面那个小姐姐的文章,写的很好,这里我直接拿来用下
+seo搜索引擎优化认为，网站的最佳结构是用户从首页点击三次就可以到达任何一个页面，但是我们使用hexo编译的站点打开文章的url是：sitename/year/mounth/day/title四层的结构，这样的url结构很不利于seo，爬虫就会经常爬不到我们的文章，所以我们可以将url直接改成sitename/title的形式，并且title最好是用英文，在根目录的配置文件下修改permalink如下：
+
+
+
+
+
+
+
+
+将你的网站同时托管到 Github 和 Coding 上,国内外分流
+Coding 类似于中国的 Github 一样,也提供了 Pages 服务,但对我们而言,跟 Github 不同的地方在于免费用户能拥有五个私人仓库,这个可以用来部署自己的一些私人代码,而且配合 Github 可以做到国内IP 访问 Coding 的 Pages 页面,国外访问 Github 上面的 Pages 页面.大致配置过程如下:
+
+在 Coding 上创建仓库: 这里注意要去创建一个公有的仓库,私有仓库是没有 pages 服务的.
+将你的公钥传上去.这里网上关于自己公钥的相关教程很多,我就不多叙述了.
+修改 hexo 的站点配置文件中的 deploy 选项,配置你的 Github 与 Coding 仓库,需要注意的是其中 Github 的仓库名xxx.github.io必须跟你的 Github 名称一样:
+
+
+
+
+
+
+
+
+
+
+每次上传的时候都需要输入你的账号密码之类的信息,可以直接将你账号密码写在上传地址中,这样就不用每次更新都输入你的账号密码了
+
+例如你的账号为:crown3,密码为 BBB;
+那你的repo填写为下面这样即可
+github: https://crown3:BBB@github.com/crown3/crown3.github.io.git
+coding: https://crown3:BBB@git.coding.net/crown3/仓库名.git
+
+
+设置 coding 的 pages 服务:在pages页面将部署来源选择为master分支，然后将自定义域名填写自己购买的域名就可以了
+
+设置域名解析: 在你的域名提供商那里修改你的域名解析就行,例如我的是万网,按照下图所示,添加这五条解析即可做到国内外访问分流.
+
+
+
+
+将自己的代码托管到私有仓库
+当我们将自己的代码托管到私有仓库后,就可以在任何一台电脑上将你的 hexo 部署代码下载下来进行编辑,而且可以将你的一些个人密钥什么的直接推送到你的代码仓库去,这样更便利于我们的管理维护.
+在上文我已经说过了,国内 Coding 的免费用户可以创建五个私有仓库,这是可以直接拿来使用,但是如果你对国内的私有仓库安全性存有怀疑,也可以去使用国外专门做私有仓库托管的bitbucket,在这里私有仓库是可以免费使用的.具体上传之类的使用方法我就不再细述了,都是基于 git 做的代码管理,使用方法都大同小异.
+使用 Gulp 压缩你的代码
+代码压缩可以明显减小我们的文件大小,加载速度,这里我会直接提供我使用的脚本,大家可以直接拿来使用,有需要了解相关知识的可以去gulp官网去做相关了解.
+
+先安装Gulp以及我们需要使用的一系列插件:
+
+npm i gulp gulp-clean-css gulp-htmlclean gulp-htmlmin gulp-imagemin gulp-uglify -S
+
+
+接着创建gulpfile.js: 在你的博客根目录(跟你站点配置文件同一层)下创建gulpfile.js这个文件,然后在里面填入如下脚本即可,里面有相关注释,感兴趣的可以去了解一下.
+
+var gulp = require('gulp');
+var minifycss = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+var imagemin = require('gulp-imagemin');
+var del = require('del');
+var runSequence = require('run-sequence');
+var Hexo = require('hexo');
+// 清除public文件夹
+gulp.task('clean', function() {
+    return del(['public/**/*']);
+});
+// 利用Hexo API 来生成博客内容， 效果和在命令行运行： hexo g 一样
+// generate html with 'hexo generate'
+var hexo = new Hexo(process.cwd(), {});
+gulp.task('generate', function(cb) {
+    hexo.init().then(function() {
+        return hexo.call('generate', {
+            watch: false
+        });
+    }).then(function() {
+        return hexo.exit();
+    }).then(function() {
+        return cb()
+    }).catch(function(err) {
+        console.log(err);
+        hexo.exit(err);
+        return cb(err);
+    })
+})
+// 压缩public目录下的所有css
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest('./public'));
+});
+// 压缩public目录下的所有html
+gulp.task('minify-html', function() {
+    return gulp.src('./public/**/*.html')
+        .pipe(htmlclean())
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        }))
+        .pipe(gulp.dest('./public'))
+});
+// 压缩public目录下的所有js
+gulp.task('minify-js', function() {
+    return gulp.src('./public/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./public'));
+});
+// 压缩public目录下的所有img： 这个采用默认配置
+gulp.task('minify-img', function() {
+    return gulp.src('./public/images/**/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./public/images'))
+})
+// 同上，压缩图片，这里采用了： 最大化压缩效果。
+gulp.task('minify-img-aggressive', function() {
+    return gulp.src('./public/images/**/*.*')
+        .pipe(imagemin(
+        [imagemin.gifsicle({'optimizationLevel': 3}), 
+        imagemin.jpegtran({'progressive': true}), 
+        imagemin.optipng({'optimizationLevel': 7}), 
+        imagemin.svgo()],
+        {'verbose': true}))
+        .pipe(gulp.dest('./public/images'))
+})
+// 用run-sequence并发执行，同时处理html，css，js，img
+gulp.task('compress', function(cb) {
+    runSequence(['minify-html', 'minify-css', 'minify-js', 'minify-img-aggressive'], cb);
+});
+// 执行顺序： 清除public目录 -> 产生原始博客内容 -> 执行压缩混淆
+gulp.task('build', function(cb) {
+    runSequence('clean', 'generate', 'compress', cb)
+});
+gulp.task('default', ['build'])
+
+
+执行gulp: 在命令行中输入gulp build即可
+
+
+这里要说明的是,这里利用Hexo API 来生成博客内容,效果和在命令行运行： hexo g 一样,所以当我们在执行gulp build时,会根据我们的相关博文来直接生成相应的public文件夹中的内容,并直接进行压缩,接下来我们运行hexo d上传上去的代码会是已经进行相应压缩了的.
+
+作者：crown3
+链接：https://www.jianshu.com/p/efaf72aab32e
+来源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
 ##  一些注意事项
 ---
 首先解释一下文章开头的配置，如下图所示：

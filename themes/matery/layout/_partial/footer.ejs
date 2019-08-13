@@ -4,34 +4,37 @@
             &copy; 2019 Hongwei. All Rights Reserved.
 
             <% if (theme.wordCount.enable && theme.wordCount.totalCount) { %>
-
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
                 <span class="white-color"><%= totalcount(site) %></span>
 
             <% } %>
-
             <br>
+
             <span id="sitetime"></span>
 
             <% let socialClass = '' %>
+
             <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
                 <% socialClass = 'social-statis' %><br>
-                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>      
+                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
                     <span id="busuanzi_container_site_pv" style='display:none'></span>
-                        <i class="fa fa-heart-o"></i>
-                        本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
 
                 <% } %>
 
                 <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
                     <span id="busuanzi_container_site_uv" style='display:none'></span>
-                        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                    人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
                     
                 <% } %>
 
             <% } %>
+
         </div>
+
         <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+
     </div>
 </footer>
 
@@ -42,8 +45,8 @@
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 200;
-        var uvcountOffset = 100;
+        var pvcountOffset = 500;
+        var uvcountOffset = 200;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

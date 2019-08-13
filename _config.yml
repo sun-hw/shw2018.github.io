@@ -108,14 +108,34 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: matery
 
+
+# # Deployment
+# ## Docs: https://hexo.io/docs/deployment.html
+# deploy:
+#   type: git
+#   repository: https://github.com/shw2018/shw2018.github.io.git
+#   # repository: https://git.coding.net/hwsun/hwsun.git
+#   # repository: https://gitee.com/hwsun/hwsun.git
+#   branch: master
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repository: https://github.com/shw2018/shw2018.github.io.git
-  # repository: https://git.coding.net/hwsun/hwsun.git
-  # repository: https://gitee.com/hwsun/hwsun.git
+- type: git
+  repo:
+    github:  https://github.com/shw2018/shw2018.github.io.git
+    # coding: https://git.coding.net/hwsun/hwsun.git
+    # gitee: https://gitee.com/hwsun/hwsun.git
   branch: master
+- type: baidu_url_submitter
+
+# baidu submit
+baidu_url_submit:
+  count: 80                # 提交最新的一个链接
+  host: www.sunhwee.com    # 在百度站长平台中注册的域名
+  token: xxxxxxxxxxxxxxxxx # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt     # 文本文档的地址， 新链接会保存在此文本文档里
 
 
 live2d:
