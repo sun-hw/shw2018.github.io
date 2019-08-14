@@ -3,8 +3,8 @@ title: 常用软件bug调试与使用tips
 date: 2019-08-12 16:42:05
 top: true
 cover: true
-img: /medias/banner/6.jpg
-coverImg: /medias/banner/2.jpg
+img: /medias/banner/4.jpg
+coverImg: /medias/banner/7.jpg
 password:
 toc: true
 mathjax: false
