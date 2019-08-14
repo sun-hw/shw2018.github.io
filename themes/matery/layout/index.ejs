@@ -18,9 +18,9 @@
                     <%- partial('_widget/music') %>
                     <% } %>
                     <%# 注释语法 %>
-                    <%# if (theme.video.enable) { %>
-                    <%# - partial('_widget/video') %>
-                    <%# } %>
+                    <% if (theme.video.enable) { %>
+                    <% - partial('_widget/video') %>
+                    <% } %>
                     <div id="recommend-sections" class="recommend">
                         <%- partial('_widget/recommend') %>
                     </div>
