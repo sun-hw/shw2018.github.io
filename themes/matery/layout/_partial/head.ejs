@@ -84,22 +84,21 @@
     <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.lightgallery %>">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
     <style type="text/css">
-        <% if ( !theme.code.break) {
-
-            %>code[class*="language-"],
+        <% if ( !theme.code.break) { %>
+            
+            code[class*="language-"],
             pre[class*="language-"] {
                 white-space: pre !important;
             }
 
-            <%
-        }
-
-        %>
+        <% } %>
     </style>
 
     <script src="<%- theme.libs.js.jquery %>"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -109,4 +108,23 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+
+    <%# 加入百度自动推送JS代码，全站激活，20190813 %>
+    <% if (theme.baidu_push) { %>
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    <% } %>  
+
 </head>

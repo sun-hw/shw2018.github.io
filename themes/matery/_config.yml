@@ -168,18 +168,13 @@ socialLink:
 # 可以在某篇文章的 Front-matter 中再加上`toc: false`，使该篇文章关闭TOC目录功能
 toc:
   enable: true
-  heading: h1, h2, h3, h4
+  heading: h1, h2, h3, h4, h5
   showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
 
-# Code Highlight theme
-# Available values: normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-# highlight_theme: night eighties
-
 # Whether the code is broken.
-# 代码是否折行
+# 代码是否换行
 code:
-  break: true
+  break: false
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
@@ -460,3 +455,12 @@ featureImages:
 reprint:
   enable: fasle # whether enable reprint section 是否启用“转载规则限定模块”
   default: cc_by
+
+
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+baidu_push: true
+
+# Code Highlight theme
+# Available values: normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+# highlight_theme: night eighties
