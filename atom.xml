@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>洪卫的博客</title>
+  
+  <subtitle>洪卫的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://sunhwee.com/"/>
+  <updated>2019-08-17T13:58:55.932Z</updated>
+  <id>https://sunhwee.com/</id>
+  
+  <author>
+    <name>洪卫</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown Emoji表情语法速查表</title>
+    <link href="https://sunhwee.com/2019/08/16/emoji-cheat-sheet/"/>
+    <id>https://sunhwee.com/2019/08/16/emoji-cheat-sheet/</id>
+    <published>2019-08-16T10:50:36.000Z</published>
+    <updated>2019-08-17T13:58:55.932Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[x] 选项&lt;/p&gt;
+&lt;p&gt;[这是一条测试]： &lt;img class=&quot;emoji&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="文章写作技巧" scheme="https://sunhwee.com/categories/%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Markdown" scheme="https://sunhwee.com/tags/Markdown/"/>
+    
+      <category term="Emoji" scheme="https://sunhwee.com/tags/Emoji/"/>
+    
+      <category term="表情包" scheme="https://sunhwee.com/tags/%E8%A1%A8%E6%83%85%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python GUI之tkinter窗口视窗教程大集合（看这篇就够了）</title>
+    <link href="https://sunhwee.com/2019/08/16/python-gui-tkinter-tutorial/"/>
+    <id>https://sunhwee.com/2019/08/16/python-gui-tkinter-tutorial/</id>
+    <published>2019-08-16T07:36:09.000Z</published>
+    <updated>2019-08-17T13:58:55.888Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python教程" scheme="https://sunhwee.com/categories/Python%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://sunhwee.com/tags/Python/"/>
+    
+      <category term="GUI" scheme="https://sunhwee.com/tags/GUI/"/>
+    
+      <category term="TKinter" scheme="https://sunhwee.com/tags/TKinter/"/>
+    
+      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>各类软件常用命令</title>
+    <link href="https://sunhwee.com/2019/08/15/software-commands/"/>
+    <id>https://sunhwee.com/2019/08/15/software-commands/</id>
+    <published>2019-08-15T06:25:59.000Z</published>
+    <updated>2019-08-17T13:58:55.932Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;这篇博客笔记用来记录各类软件常用命令和使用技巧，持续更新…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;Git-常用命令&quot;&gt;&lt;a href=&quot;#Git-常用命令&quot; class=&quot;headerlink&quot; title=&quot;Git
+        
+      
+    
+    </summary>
+    
+      <category term="软件使用技巧" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Software" scheme="https://sunhwee.com/tags/Software/"/>
+    
+      <category term="Commands" scheme="https://sunhwee.com/tags/Commands/"/>
+    
+      <category term="常用命令" scheme="https://sunhwee.com/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用软件bug调试与使用tips</title>
+    <link href="https://sunhwee.com/2019/08/12/softwares-bug-tips/"/>
+    <id>https://sunhwee.com/2019/08/12/softwares-bug-tips/</id>
+    <published>2019-08-12T08:42:05.000Z</published>
+    <updated>2019-08-17T13:58:55.932Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Ubuntu18-04-安装-Visual-Studio-Code出现问题的解决&quot;&gt;&lt;a href=&quot;#Ubuntu18-04-安装-Visual-Studio-Code出现问题的解决&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu18.04
+        
+      
+    
+    </summary>
+    
+      <category term="软件安装与配置" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Softwares" scheme="https://sunhwee.com/tags/Softwares/"/>
+    
+      <category term="Bugs" scheme="https://sunhwee.com/tags/Bugs/"/>
+    
+      <category term="常用软件" scheme="https://sunhwee.com/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="Tips" scheme="https://sunhwee.com/tags/Tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo+Github博客搭建记录</title>
+    <link href="https://sunhwee.com/2019/08/10/blog/"/>
+    <id>https://sunhwee.com/2019/08/10/blog/</id>
+    <published>2019-08-10T13:44:44.000Z</published>
+    <updated>2019-08-17T13:58:55.904Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;阅读须知&quot;&gt;&lt;a href=&quot;#阅读须知&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件安装与配置" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hexo" scheme="https://sunhwee.com/tags/Hexo/"/>
+    
+      <category term="Github" scheme="https://sunhwee.com/tags/Github/"/>
+    
+      <category term="博客" scheme="https://sunhwee.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用软件推荐</title>
+    <link href="https://sunhwee.com/2019/08/06/chang-yong-ruan-jian-tui-jian/"/>
+    <id>https://sunhwee.com/2019/08/06/chang-yong-ruan-jian-tui-jian/</id>
+    <published>2019-08-06T14:35:36.000Z</published>
+    <updated>2019-08-17T13:58:55.936Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Windows软件&quot;&gt;&lt;a href=&quot;#Windows软件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件推荐" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="常用软件" scheme="https://sunhwee.com/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="Software" scheme="https://sunhwee.com/tags/Software/"/>
+    
+      <category term="Windows" scheme="https://sunhwee.com/tags/Windows/"/>
+    
+      <category term="Linux" scheme="https://sunhwee.com/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>
