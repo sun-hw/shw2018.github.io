@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunhwee.com/"/>
-  <updated>2019-08-17T13:58:55.932Z</updated>
+  <updated>2019-08-18T15:07:50.295Z</updated>
   <id>https://sunhwee.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PicGo+GitHub：你的最佳免费图床选择！</title>
+    <link href="https://sunhwee.com/2019/08/18/picgo-github-picbed/"/>
+    <id>https://sunhwee.com/2019/08/18/picgo-github-picbed/</id>
+    <published>2019-08-18T12:54:45.000Z</published>
+    <updated>2019-08-18T15:07:50.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PicGo介绍&quot;&gt;&lt;a href=&quot;#PicGo介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="文章写作技巧" scheme="https://sunhwee.com/categories/%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
+    
+      <category term="PicGo" scheme="https://sunhwee.com/tags/PicGo/"/>
+    
+      <category term="Github" scheme="https://sunhwee.com/tags/Github/"/>
+    
+      <category term="图床" scheme="https://sunhwee.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown Emoji表情语法速查表</title>
@@ -117,7 +149,7 @@
     <link href="https://sunhwee.com/2019/08/12/softwares-bug-tips/"/>
     <id>https://sunhwee.com/2019/08/12/softwares-bug-tips/</id>
     <published>2019-08-12T08:42:05.000Z</published>
-    <updated>2019-08-17T13:58:55.932Z</updated>
+    <updated>2019-08-18T12:07:07.574Z</updated>
     
     <summary type="html">
     
@@ -149,7 +181,7 @@
     <link href="https://sunhwee.com/2019/08/10/blog/"/>
     <id>https://sunhwee.com/2019/08/10/blog/</id>
     <published>2019-08-10T13:44:44.000Z</published>
-    <updated>2019-08-17T13:58:55.904Z</updated>
+    <updated>2019-08-18T12:38:08.949Z</updated>
     
     <summary type="html">
     
@@ -166,9 +198,9 @@
       <category term="软件安装与配置" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
-      <category term="Hexo" scheme="https://sunhwee.com/tags/Hexo/"/>
-    
       <category term="Github" scheme="https://sunhwee.com/tags/Github/"/>
+    
+      <category term="Hexo" scheme="https://sunhwee.com/tags/Hexo/"/>
     
       <category term="博客" scheme="https://sunhwee.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
