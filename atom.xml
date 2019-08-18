@@ -38,13 +38,13 @@
       <category term="文章写作技巧" scheme="https://sunhwee.com/categories/%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
-    
       <category term="PicGo" scheme="https://sunhwee.com/tags/PicGo/"/>
     
       <category term="Github" scheme="https://sunhwee.com/tags/Github/"/>
     
       <category term="图床" scheme="https://sunhwee.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
     
   </entry>
   
@@ -101,13 +101,13 @@
       <category term="Python教程" scheme="https://sunhwee.com/categories/Python%E6%95%99%E7%A8%8B/"/>
     
     
+      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
+    
       <category term="Python" scheme="https://sunhwee.com/tags/Python/"/>
     
       <category term="GUI" scheme="https://sunhwee.com/tags/GUI/"/>
     
       <category term="TKinter" scheme="https://sunhwee.com/tags/TKinter/"/>
-    
-      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
     
   </entry>
   
