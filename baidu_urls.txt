@@ -3,5 +3,5 @@ https://sunhwee.com/2019/08/16/emoji-cheat-sheet/
 https://sunhwee.com/2019/08/16/python-gui-tkinter-tutorial/
 https://sunhwee.com/2019/08/15/software-commands/
 https://sunhwee.com/2019/08/12/softwares-bug-tips/
-https://sunhwee.com/2019/08/10/blog/
+https://sunhwee.com/2019/08/10/hexo-blog-tutorial/
 https://sunhwee.com/2019/08/06/chang-yong-ruan-jian-tui-jian/

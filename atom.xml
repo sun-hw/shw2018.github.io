@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunhwee.com/"/>
-  <updated>2019-08-18T15:07:50.295Z</updated>
+  <updated>2019-08-19T06:01:08.874Z</updated>
   <id>https://sunhwee.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://sunhwee.com/2019/08/18/picgo-github-picbed/"/>
     <id>https://sunhwee.com/2019/08/18/picgo-github-picbed/</id>
     <published>2019-08-18T12:54:45.000Z</published>
-    <updated>2019-08-18T15:07:50.295Z</updated>
+    <updated>2019-08-19T06:01:08.874Z</updated>
     
     <summary type="html">
     
@@ -53,7 +53,7 @@
     <link href="https://sunhwee.com/2019/08/16/emoji-cheat-sheet/"/>
     <id>https://sunhwee.com/2019/08/16/emoji-cheat-sheet/</id>
     <published>2019-08-16T10:50:36.000Z</published>
-    <updated>2019-08-17T13:58:55.932Z</updated>
+    <updated>2019-08-19T06:13:28.341Z</updated>
     
     <summary type="html">
     
@@ -178,10 +178,10 @@
   
   <entry>
     <title>Hexo+Github博客搭建记录</title>
-    <link href="https://sunhwee.com/2019/08/10/blog/"/>
-    <id>https://sunhwee.com/2019/08/10/blog/</id>
+    <link href="https://sunhwee.com/2019/08/10/hexo-blog-tutorial/"/>
+    <id>https://sunhwee.com/2019/08/10/hexo-blog-tutorial/</id>
     <published>2019-08-10T13:44:44.000Z</published>
-    <updated>2019-08-18T12:38:08.949Z</updated>
+    <updated>2019-08-19T06:11:56.319Z</updated>
     
     <summary type="html">
     
@@ -228,9 +228,9 @@
       <category term="软件推荐" scheme="https://sunhwee.com/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
     
-      <category term="常用软件" scheme="https://sunhwee.com/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
-    
       <category term="Software" scheme="https://sunhwee.com/tags/Software/"/>
+    
+      <category term="常用软件" scheme="https://sunhwee.com/tags/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
     
       <category term="Windows" scheme="https://sunhwee.com/tags/Windows/"/>
     
