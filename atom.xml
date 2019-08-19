@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunhwee.com/"/>
-  <updated>2019-08-19T06:01:08.874Z</updated>
+  <updated>2019-08-19T06:34:47.018Z</updated>
   <id>https://sunhwee.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://sunhwee.com/2019/08/18/picgo-github-picbed/"/>
     <id>https://sunhwee.com/2019/08/18/picgo-github-picbed/</id>
     <published>2019-08-18T12:54:45.000Z</published>
-    <updated>2019-08-19T06:01:08.874Z</updated>
+    <updated>2019-08-19T06:34:47.018Z</updated>
     
     <summary type="html">
     
@@ -53,7 +53,7 @@
     <link href="https://sunhwee.com/2019/08/16/emoji-cheat-sheet/"/>
     <id>https://sunhwee.com/2019/08/16/emoji-cheat-sheet/</id>
     <published>2019-08-16T10:50:36.000Z</published>
-    <updated>2019-08-19T06:13:28.341Z</updated>
+    <updated>2019-08-19T11:29:17.756Z</updated>
     
     <summary type="html">
     
@@ -61,8 +61,7 @@
       
         
         
-          &lt;p&gt;[x] 选项&lt;/p&gt;
-&lt;p&gt;[这是一条测试]： &lt;img class=&quot;emoji&quot;
+          &lt;p&gt;[这也是一测试]： &lt;span class=&quot;github-emoji&quot; style=&quot;color: transparent;background:no-repeat
         
       
     
@@ -181,7 +180,7 @@
     <link href="https://sunhwee.com/2019/08/10/hexo-blog-tutorial/"/>
     <id>https://sunhwee.com/2019/08/10/hexo-blog-tutorial/</id>
     <published>2019-08-10T13:44:44.000Z</published>
-    <updated>2019-08-19T06:11:56.319Z</updated>
+    <updated>2019-08-19T06:34:28.850Z</updated>
     
     <summary type="html">
     
@@ -200,6 +199,8 @@
     
       <category term="Github" scheme="https://sunhwee.com/tags/Github/"/>
     
+      <category term="Tutorial" scheme="https://sunhwee.com/tags/Tutorial/"/>
+    
       <category term="Hexo" scheme="https://sunhwee.com/tags/Hexo/"/>
     
       <category term="博客" scheme="https://sunhwee.com/tags/%E5%8D%9A%E5%AE%A2/"/>
@@ -211,7 +212,7 @@
     <link href="https://sunhwee.com/2019/08/06/chang-yong-ruan-jian-tui-jian/"/>
     <id>https://sunhwee.com/2019/08/06/chang-yong-ruan-jian-tui-jian/</id>
     <published>2019-08-06T14:35:36.000Z</published>
-    <updated>2019-08-17T13:58:55.936Z</updated>
+    <updated>2019-08-19T08:53:09.212Z</updated>
     
     <summary type="html">
     
